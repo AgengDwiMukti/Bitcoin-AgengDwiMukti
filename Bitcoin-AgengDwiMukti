@@ -1,0 +1,108 @@
+<html lang="id"><head>
+<title>Kalkulator Bitcoin</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/upload/icon/fav-inbizia.png">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Roboto+Condensed&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="/aa_2013/aa_acss/spv/m2022.css?v=2022-12-01-8-43" rel="stylesheet">
+<script src="/aa_2013/aa_acss/download/jquery-latest.min.js?v=2020-08-06-1402"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+body{background-color:unset !important;}
+</style>
+</head>
+<body class="p-2 mb-5">
+
+
+<br>
+
+<!-- <script>
+function xcopy() {
+  var copyText = document.getElementById("popw");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+
+  navigator.clipboard.writeText(copyText.value);
+}
+</script> -->
+
+
+<div class="border" style="border: 1px solid #ccc;border-radius: 0 0 10px 10px;overflow: hidden; margin:0 auto;">
+	<div class="bg-abu text-center p-2 font-120 font-title bold">Kalkulator Bitcoin</div>
+   <form action="" target="counter" class="p-2">
+      <div class="row">
+         <div class="col-12">
+            <div class="form-group">
+               <input type="text" class="form-control" value="" name="valx" id="idvalx" placeholder="Nominal BTC">
+			   <input type="hidden" name="kurs1" value="1" id="idkurs1">
+            </div>
+         </div>
+         <div class="col-12 text-center">
+            <i class="fa fa-arrow-circle-o-down form-group" aria-hidden="true" style="font-size:200%;"></i>
+         </div>
+         <div class="col-12" style="margin-bottom:10px;">
+            <div class="form-group">
+               <select id="idkurs2" name="kurs2" class="form-control">
+                  					<option value="17212.21">USD</option>
+				 					<option selected="" value="268253325.00">IDR</option>
+				                </select>
+            </div>
+         </div>
+         <div class="col-12" style="margin-bottom:10px;">
+            <div class="form-group">
+               <input class="form-control" type="text" readonly="" value="" name="resKurs" id="idresKurs" placeholder="Hasil">
+            </div>
+         </div>
+         <div class="col-12">
+		 <input type="button" value="Hitung" name="calc" id="idcalc" onclick="calcKurs()" class="btn btn-primary btn-block">
+         </div>
+      </div>
+   </form>
+   
+
+	<script>
+	function popwidget() {
+	  window.open("https://www.inbizia.com/widget/kalkulator-bitcoin?x=1", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=300,width=400,height=400");
+	}
+	</script>
+	</div>
+   
+   <script type="text/javascript">
+      function calcKurs(){
+		  var kurs1 = $('#idkurs1').val();
+		  var kurs2 = $('#idkurs2').val();
+		  var valx = $('#idvalx').val();
+		  var resKurs;
+		  var resKurs = valx * (1/kurs1) * kurs2;
+		  
+		  if(resKurs>0.01){ 
+		  resKurs = resKurs.toFixed(2);
+		  resKurs = addCommas(resKurs);
+		  }else{
+		  resKurs = resKurs.toFixed(4);
+		  }
+		  
+		  $('#idresKurs').val(resKurs);
+      }
+      
+      function addCommas(nStr)
+      {
+		  nStr += '';
+		  x = nStr.split(',');
+		  x1 = x[0];
+		  x2 = x.length > 1 ? '.' + x[1] : '';
+		  var rgx = /(\d+)(\d{3})/;
+		  while (rgx.test(x1)) {
+		   x1 = x1.replace(rgx, '$1' + ',' + '$2');
+		  }
+		  return x1 + x2;
+      }
+   </script>
+</div>
+
+
+
+</body></html>
